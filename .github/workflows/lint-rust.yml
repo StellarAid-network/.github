@@ -1,0 +1,33 @@
+name: lint-rust
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        description: Directory containing the Rust workspace
+        type: string
+        required: false
+        default: "."
+      toolchain:
+        description: Rust toolchain (overrides rust-toolchain.toml)
+        type: string
+        required: false
+        default: "stable"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ inputs.toolchain }}
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: ${{ inputs.working-directory }}
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings

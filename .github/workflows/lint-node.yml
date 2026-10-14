@@ -1,0 +1,40 @@
+name: lint-node
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: Node.js version
+        type: string
+        required: false
+        default: "20"
+      working-directory:
+        description: Directory containing the package
+        type: string
+        required: false
+        default: "."
+      package-manager:
+        description: Package manager to use (pnpm or npm)
+        type: string
+        required: false
+        default: "pnpm"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        if: ${{ inputs.package-manager == 'pnpm' }}
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: ${{ inputs.package-manager }}
+      - run: ${{ inputs.package-manager }} install --frozen-lockfile
+      - run: ${{ inputs.package-manager }} run lint
+      - run: ${{ inputs.package-manager }} run typecheck

@@ -1,0 +1,38 @@
+name: test-rust
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        description: Directory containing the Rust workspace
+        type: string
+        required: false
+        default: "."
+      toolchain:
+        description: Rust toolchain (overrides rust-toolchain.toml)
+        type: string
+        required: false
+        default: "stable"
+      wasm-target:
+        description: WASM target used by the Stellar CLI
+        type: string
+        required: false
+        default: "wasm32v1-none"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ inputs.toolchain }}
+          targets: ${{ inputs.wasm-target }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: ${{ inputs.working-directory }}
+      - run: cargo test --workspace
+      - run: cargo build --workspace --target ${{ inputs.wasm-target }} --release
