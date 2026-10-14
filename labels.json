@@ -1,0 +1,67 @@
+[
+  {
+    "name": "good first issue",
+    "color": "7057ff",
+    "description": "Good for newcomers; clear scope and acceptance criteria"
+  },
+  {
+    "name": "help wanted",
+    "color": "008672",
+    "description": "Extra attention is needed or contributions are welcome"
+  },
+  {
+    "name": "post-85",
+    "color": "d4c5f9",
+    "description": "Intentionally deferred beyond the 85% milestone"
+  },
+  {
+    "name": "security",
+    "color": "b60205",
+    "description": "Security-relevant; handle with care"
+  },
+  {
+    "name": "breaking",
+    "color": "e11d21",
+    "description": "Breaking change to a public interface, event, or storage layout"
+  },
+  {
+    "name": "docs",
+    "color": "0075ca",
+    "description": "Documentation improvements"
+  },
+  {
+    "name": "bug",
+    "color": "d73a4a",
+    "description": "Something is not working"
+  },
+  {
+    "name": "enhancement",
+    "color": "a2eeef",
+    "description": "New feature or request"
+  },
+  {
+    "name": "rfc",
+    "color": "5319e7",
+    "description": "Proposal requiring review across repositories"
+  },
+  {
+    "name": "contracts",
+    "color": "7B61FF",
+    "description": "Soroban smart contracts"
+  },
+  {
+    "name": "sdk",
+    "color": "fbca04",
+    "description": "TypeScript SDK"
+  },
+  {
+    "name": "api",
+    "color": "0e8a16",
+    "description": "Backend API and indexer"
+  },
+  {
+    "name": "web",
+    "color": "1d76db",
+    "description": "Next.js web application"
+  }
+]

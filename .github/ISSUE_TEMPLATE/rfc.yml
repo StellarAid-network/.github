@@ -1,0 +1,63 @@
+name: RFC
+description: Propose a cross-repo or breaking change
+title: "rfc: "
+labels: ["rfc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for changes that affect public interfaces, event shapes,
+        storage layouts, or that span multiple repositories. Copy
+        `rfcs/0000-template.md` into `rfcs/` and link the PR here.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One paragraph explaining the proposal.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+    validations:
+      required: true
+  - type: dropdown
+    id: repos
+    attributes:
+      label: Repositories affected
+      multiple: true
+      options:
+        - contracts
+        - sdk
+        - api
+        - web
+    validations:
+      required: true
+  - type: dropdown
+    id: breaking
+    attributes:
+      label: Breaking change?
+      options:
+        - "no"
+        - "yes"
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security considerations
+    validations:
+      required: true
+  - type: textarea
+    id: readme-impact
+    attributes:
+      label: README impact
+    validations:
+      required: true
