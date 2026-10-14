@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌍 StellarAid
+# 🌍 StellarAid-network
 
 **A decentralized social network for giveaways, help requests, and community-driven mutual aid, built on the Stellar blockchain.**
 
