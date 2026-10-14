@@ -107,10 +107,10 @@ sequenceDiagram
 
 | Repo | Purpose | Stack | Status |
 |---|---|---|---|
-| [`contracts`](https://github.com/stellar-aid/contracts) | Soroban smart contracts: help-request escrow, reputation, attestations. Source of truth for on-chain rules. | Rust, Soroban, Stellar CLI | 🚧 In development |
-| [`sdk`](https://github.com/stellar-aid/sdk) | TypeScript SDK: generated contract bindings, claimable-balance builders, SEP-10 helpers, shared types and network config. Published to npm. | TypeScript | 🚧 In development |
-| [`web`](https://github.com/stellar-aid/web) | The user-facing app: wallet connect, giveaways, help requests, profiles, feed. | Next.js, TypeScript, Tailwind | 🚧 In development |
-| [`api`](https://github.com/stellar-aid/api) | Off-chain backend: profiles, posts, comments, reports, search, SEP-10 auth, plus the indexer worker. | Node.js, Fastify, Postgres, Prisma | 📋 Planned |
+| [`contracts`](https://github.com/StellarAid-network/contracts) | Soroban smart contracts: help-request escrow, reputation, attestations. Source of truth for on-chain rules. | Rust, Soroban, Stellar CLI | 🚧 In development |
+| [`sdk`](https://github.com/StellarAid-network/sdk) | TypeScript SDK: generated contract bindings, claimable-balance builders, SEP-10 helpers, shared types and network config. Published to npm. | TypeScript | 🚧 In development |
+| [`web`](https://github.com/StellarAid-network/web) | The user-facing app: wallet connect, giveaways, help requests, profiles, feed. | Next.js, TypeScript, Tailwind | 🚧 In development |
+| [`api`](https://github.com/StellarAid-network/api) | Off-chain backend: profiles, posts, comments, reports, search, SEP-10 auth, plus the indexer worker. | Node.js, Fastify, Postgres, Prisma | 📋 Planned |
 
 ### Dependency flow
 
